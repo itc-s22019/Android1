@@ -1,5 +1,6 @@
 package jp.ac.std.it_college.s22019.intentsample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -16,7 +17,19 @@ class MainActivity : AppCompatActivity() {
 
         binding.lvMenu.apply {
             // アダプターをセット
-            adapter = MenuListAdapter(menuList)
+            adapter = MenuListAdapter(menuList) {name, price ->
+                /* アイテムを選択されたときの処理はここに書くことができる。*/
+                // インテントオブジェクトの作成
+                val intent2MenuThanks = Intent(
+                    this@MainActivity,
+                    MenuThanksActivity::class.java
+                )
+                // 次の画面に送るデータをセットする
+                intent2MenuThanks.putExtra("menuName", name)
+                intent2MenuThanks.putExtra("menuPrice", price)
+                // 次の画面を起動
+                startActivity(intent2MenuThanks)
+            }
 
             // RecyclerView の表示方法を直接的にする
             LinearLayoutManager(this@MainActivity).let {

@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import jp.ac.std.it_college.s22019.lifecyclesample.databinding.ActivityMainBinding
+import jp.ac.std.it_college.s22019.lifecyclesample.databinding.ActivitySubBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class SubActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySubBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.i("LifeCycleSample", "Main onCreate() called.")
+        Log.i("LifeCycleSample", "Sub onCreate() called.")
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btNext.setOnClickListener(::onNextClick)
+        binding.btPrevious.setOnClickListener(::onPreviousClick)
     }
 
     override fun onStart() {
@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun onNextClick(view: View) {
-        val intent = Intent(this, SubActivity::class.java)
+    private fun onPreviousClick(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 }

@@ -13,6 +13,9 @@ class MenuThanksActivity : AppCompatActivity() {
         binding = ActivityMenuThanksBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // ToolbarをActionbarとして使う
+        setSupportActionBar(binding.toolbar3)
+
         // 前の画面から渡ってくるであろうデータを取り出す
         val menuName = intent.getStringExtra("menuName") ?: ""
         val menuPrice = intent.getIntExtra("menuPrice", 0)

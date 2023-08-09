@@ -17,7 +17,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar3" />
 
     <TextView
         android:id="@+id/tvThxDesc"
@@ -45,10 +45,9 @@
         android:id="@+id/tvMenuPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvYens"
-        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvMenuName"
+        app:layout_constraintEnd_toStartOf="@+id/tvMenuYen"
         tools:text="850" />
 
     <Button
@@ -65,12 +64,25 @@
         app:layout_constraintTop_toBottomOf="@+id/tvMenuName" />
 
     <TextView
-        android:id="@+id/tvYens"
+        android:id="@+id/tvMenuYen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/tv_menu_unit"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvMenuName"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThxDesc" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/design_default_color_surface" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-mergeDebugResources-27:/layout/activity_menu_thanks.xml",
+        "source": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-main-30:/layout/activity_menu_thanks.xml"
+    },
+    {
+        "merged": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-mergeDebugResources-27:/layout/menu_row.xml",
+        "source": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-main-30:/layout/menu_row.xml"
+    },
+    {
+        "merged": "jp.ac.std.it_college.s22019.menusample.app-mergeDebugResources-27:/layout/activity_menu_thanks.xml",
+        "source": "jp.ac.std.it_college.s22019.menusample.app-main-30:/layout/activity_menu_thanks.xml"
+    },
+    {
+        "merged": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-mergeDebugResources-27:/layout/activity_main.xml",
+        "source": "/home/s22019/.gradle/daemon/8.0/jp.ac.std.it_college.s22019.menusample.app-main-30:/layout/activity_main.xml"
+    }
+]

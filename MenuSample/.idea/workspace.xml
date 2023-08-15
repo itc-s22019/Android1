@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="932d0d15-01e4-4da5-a9a5-b32e8654f81e" name="変更" comment="8.3までできた。メニューサンプル、アクションバーに戻るボタン設置。" />
+    <list default="true" id="932d0d15-01e4-4da5-a9a5-b32e8654f81e" name="変更" comment="8.3までできた。メニューサンプル、アクションバーに戻るボタン設置。">
+      <change afterPath="$PROJECT_DIR$/../FragumentSample/app/src/main/java/jp/ac/std/it_college/s22019/fragumentsample/MenuThanksFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FragumentSample/app/src/main/res/layout/fragment_menu_thanks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FragumentSample/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FragumentSample/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

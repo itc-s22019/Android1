@@ -16,8 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // イベント識別名、LifecycleOwner,イベントリスナを渡して待ち受ける
-        supportFragmentManager
-            .setFragmentResultListener(REQUEST_SELECTED_MENU, this, ::onSelectedMenu)
+        // Fragmentからの応答を待ち受ける
+        supportFragmentManager.run {
+            setFragmentResultListener(
+                REQUEST_SELECTED_MENU, this@MainActivity, ::onSelectedMenu
+            )
+            setFragmentResultListener(
+                REQUEST_BACK_MENU, this@MainActivity, ::onBackMenu
+            )
+        }
+
     }
 
     private fun onSelectedMenu(requestKey: String, bundle: Bundle) {
@@ -26,13 +34,29 @@ class MainActivity : AppCompatActivity() {
         // MenuThanksFragmentを表示させる。
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            addToBackStack("Only List")
-            replace(R.id.fragmentMainContainer, MenuThanksFragment::class.java,
-                bundleOf(
-                    ARG_NAME to bundle.getString(RESULT_NAME, ""),
-                    ARG_PRICE to bundle.getInt(RESULT_PRICE, 0)
-                )
+            var args = bundleOf(
+                ARG_NAME to bundle.getString(RESULT_NAME, ""),
+                ARG_PRICE to bundle.getInt(RESULT_PRICE, 0)
             )
+            // fragmentMainContainerがあればスマホ版
+            if (binding.fragmentMainContainer != null) {
+                addToBackStack("Only List")
+                replace(R.id.fragmentMainContainer, MenuThanksFragment::class.java, args)
+            } else {
+                // fragmentMainContainerがないのでタブレットの横向き版
+                replace(R.id.fragmentThanksContainer, MenuThanksFragment::class.java, args)
+            }
+        }
+    }
+    private fun onBackMenu(requstKey: String, bundle: Bundle) {
+        if (binding.fragmentMainContainer != null) {
+            supportFragmentManager.popBackStack()
+        } else {
+            supportFragmentManager.commit {
+                binding.fragmentThanksContainer?.let {
+                    remove(it.getFragment())
+                }
+            }
         }
     }
 }
